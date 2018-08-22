@@ -33,8 +33,3 @@ Yoshua Bengio, and Aaron Courville. An excellent overview of the the field of ma
 in general and deep learning in particular.
 - [My Notes](http://mckinziebrandon.me/assets/pdf/CondensedSummaries.pdf) on deep learning and natural language processing. If there is a topic in the course that we didn't have time to explain in depth, there is a good chance I've written extensive notes on it here.
 
-## TODO
-
-- probably should move all bazel stuff into section5
-- go through each section and delete any file that wasn't in a video
-- add documentation to everything
