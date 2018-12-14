@@ -57,7 +57,7 @@ def model_fn(features, labels, mode, params):
     embedded_features = components.glove_embed(
         features,
         embed_shape=(params.vocab_size, params.embed_size),
-        vocabulary=params.vocab)
+        vocab_path=params.vocab)
 
     hidden_layer = tf.layers.Dense(
         params.hidden_size, activation=tf.tanh)(embedded_features)
@@ -145,7 +145,7 @@ def main(_):
         with open(vocab_path) as f:
             vocab = [l.strip() for l in f.readlines()]
 
-    hparams.vocab = vocab
+    hparams.vocab = vocab_path
     print('Creating autoencoder.')
     autoencoder = tf.estimator.Estimator(
         model_fn=model_fn,
