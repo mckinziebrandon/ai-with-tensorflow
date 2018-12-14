@@ -32,7 +32,7 @@ class Dataset(object):
         features['sequence'] = tf.sparse_tensor_to_dense(features['sequence'])
         label = features['label']
         sequence = features['sequence']
-        return sequence[self.params.max_seq_len], label
+        return sequence[:self.params.max_seq_len], label
 
     def vectorize_labels(self, labels):
         table = tf.contrib.lookup.index_table_from_file(
